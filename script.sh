@@ -16,11 +16,11 @@ echo " [*] Searching crt.sh...";
 curl -s -X GET "https://crt.sh/?q=%.$1&output=json" | jq '.[].name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u >> .subdomains
 
 #from Hackertarget
-echo " [*] Searching cert.sh...";
+echo " [*] Searching Hackertarget...";
 curl -s https://api.hackertarget.com/hostsearch/?q=$1 | cut -d',' -f1 | sort -u >> .subdomains
 
 #from ThreatCrowd
-echo " [*] Searching cert.sh...";
+echo " [*] Searching Threatcrowd...";
 curl -s https://www.threatcrowd.org/searchApi/v2/domain/report/?domain=$1 | jq -r '.subdomains | .[]' | sort -u >> .subdomains
 
 echo "";
