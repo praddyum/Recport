@@ -1,0 +1,19 @@
+ [*] Scanning Ports on admin.dsckiit.tech
+22/tcp
+80/tcp
+443/tcp
+
+
+
+ [*] Scanning Ports on asjx.dsckiit.tech
+80/tcp
+443/tcp
+
+
+
+ [*] Scanning Ports on dsckiit.tech
+80/tcp
+443/tcp
+
+
+
