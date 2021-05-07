@@ -24,5 +24,7 @@ Recport is a tool to automate the enumeration process for domain names and proce
 - Run `sudo ./requirements.sh` 
 - Run `./script.sh [domain] [directory_wordlist]` 
 
+Special thanks to [Imran Parray](https://github.com/imran-parray?tab=repositories) for the awesome session on bash scripting
+
 ## Support
   Support me on [Paypal](https://www.paypal.me/n00bx101)
