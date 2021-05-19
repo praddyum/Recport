@@ -29,6 +29,12 @@ then
 	fi	
 fi
 
+if ! [[ -f $2 ]]
+then
+	echo -e "No file found at $2. Please specify the correct path to wordlist \n Exiting the program!!!"
+	exit 0	
+fi
+
 echo -e "\e[1;31m
  ____  _____ ____ ____   ___  ____ _____ 
 |  _ \| ____/ ___|  _ \ / _ \|  _ \_   _|
