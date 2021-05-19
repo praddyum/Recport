@@ -1,28 +1,32 @@
 # Usage: script.sh "Domain name" "Path to wordlist"
 #!/bin/bash
 
-if [ $# != 2 -a $1 != "-h" ]
+if [ $# != 2 ]
 then
-	echo -e "Inavalid usage: \n Correct usage: ./script example.com wordlist_path"
-	exit 0
-fi
+	if [ $# == 0 ]
+	then
+		echo -e "Inavalid usage: \n Correct usage: ./script example.com wordlist_path"
+		exit 0
+	elif [ $# == 1 -a $1 == "-h" ]
+	then
+		echo -e "\e[1;31m
+		 ____  _____ ____ ____   ___  ____ _____ 
+		|  _ \| ____/ ___|  _ \ / _ \|  _ \_   _|
+		| |_) |  _|| |   | |_) | | | | |_) || |
+		|  _ <| |__| |___|  __/| |_| |  _ < | | 
+		|_| \_\_____\____|_|    \___/|_| \_\|_|
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \e[0m"
+		echo -e "\e[1;32m Developed by : n00bx101 \e[0m"
+		echo -e "\e[1;32m Version : 0.1 \n\n \e[0m"
 
-if [ $# == 1 -a $1 == "-h" ]
-then
-	echo -e "\e[1;31m
-	 ____  _____ ____ ____   ___  ____ _____ 
-	|  _ \| ____/ ___|  _ \ / _ \|  _ \_   _|
-	| |_) |  _|| |   | |_) | | | | |_) || |
-	|  _ <| |__| |___|  __/| |_| |  _ < | | 
-	|_| \_\_____\____|_|    \___/|_| \_\|_|
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \e[0m"
-	echo -e "\e[1;32m Developed by : n00bx101 \e[0m"
-	echo -e "\e[1;32m Version : 0.1 \n\n \e[0m"
+		echo -e "\e[1;32m Recport is a tool to automate the enumerate process for domain names and process the report for analysis. It makes use of API's to first look for the possible subdomains for the provided domain and then filter out the live subdomains for further enumeration. Once we get live domains we make use of nmap to look for open ports on those vhosts also in end using ffuf it does directory enumeration for hidden paths. \e[0m"
+		echo -e "\e[1;33m \nExample usage: ./script example.com wordlist_path \e[0m \n\n"
 
-	echo -e "\e[1;32m Recport is a tool to automate the enumerate process for domain names and process the report for analysis. It makes use of API's to first look for the possible subdomains for the provided domain and then filter out the live subdomains for further enumeration. Once we get live domains we make use of nmap to look for open ports on those vhosts also in end using ffuf it does directory enumeration for hidden paths. \e[0m"
-	echo -e "\e[1;33m \nExample usage: ./script example.com wordlist_path \e[0m \n\n"
-
-	exit 0
+		exit 0
+	else
+		echo -e "Inavalid usage: \n Correct usage: ./script example.com wordlist_path"
+		exit 0	
+	fi	
 fi
 
 echo -e "\e[1;31m
